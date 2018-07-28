@@ -52,6 +52,7 @@ function onload(){
 	scene = document.getElementById('scene');
 	best  = document.getElementById('best');
 	p     = document.getElementById('p');
+	hint  = document.getElementById('hint');
 	ivls=ivls.concat(setInterval(main, 1000));
 	//startGame();
 }
@@ -97,6 +98,7 @@ function startGame(){
 		clearInterval(ivls[i]);
 	scene.innerHTML = '';
 	best.innerHTML = '';
+	hint.innerHTML = '<span>Use your arrow keys on your keyboard to move.</span>';
 	setScene();
 	ivls=ivls.concat(setInterval(mainLoop,1000));
 	els=[];
@@ -150,6 +152,7 @@ function gameOver(){
 <br><div id="best"></div><br>
 <div id="scene"></div>
 <div id ="p"></div>
+<div id ="hint"></div>
 </pre>
 <h6><a href="https://github.com/Nircek/spacer">Spacer v0.0 by Nircek (MIT license)</a></h6>
 </div>
