@@ -55,6 +55,7 @@ points = 0;
 SPACE=32;
 LEFT=37;
 RIGHT=39;
+UP=38;
 HEIGHT=10;
 WIDTH=20;
 started=false;
@@ -86,6 +87,7 @@ function notificatioN(){if(started)return;scene.innerHTML = " ";setTimeout(notif
 function mainMenu(){
 	best.innerHTML = 'Your best score is '+best_sc+'.';
 	p.innerHTML = '';
+	scene.onclick = startGame;
 	started = false;
 	notification();
 	body.onkeydown=function(e){
@@ -94,6 +96,7 @@ function mainMenu(){
 			case SPACE: startGame();     break;
 			case LEFT:  turnLeft();      break;
 			case RIGHT: turnRight();     break;
+			case UP:    shoot();         break;
 			case 68:    best_sc=0;       break;
 			default: e.preventDefault(); break;
 		}
@@ -103,7 +106,9 @@ function mainMenu(){
 }
 function turnLeft(){  pos=(WIDTH+pos-1)%WIDTH; }
 function turnRight(){ pos=(WIDTH+pos+1)%WIDTH; }
+function shoot(){}
 function startGame(){
+	scene.onclick = null;
 	started=true;
 	clearIntervals();
 	scene.innerHTML = '';
@@ -157,13 +162,18 @@ function gameOver(){
 </head>
 <body onload="onLoad()" id="body">
 <div center>
-<pre>
 <div id="title">LOADING</div>
 <br><div id="best"></div><br>
+<pre>
 <div id="scene"></div>
-<div id ="p"></div>
-<div id ="hint"></div>
 </pre>
+<div id="p"></div>
+<div id="buttons">
+<button onclick="turnLeft()">&lt;</button>
+<button onclick="shoot()">^</button>
+<button onclick="turnRight()">&gt;</button>
+</div>
+<div id ="hint"></div>
 <h6><a href="https://github.com/Nircek/spacer">Spacer v0.0 by Nircek (MIT license)</a></h6>
 </div>
 </body>
