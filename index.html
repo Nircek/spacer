@@ -102,12 +102,12 @@ function mainMenu(){
 	body.onkeydown=function(e){
 		if(!e.metaKey){e.preventDefault();}
 		switch(e.keyCode){
-			case SPACE: startGame();     break;
-			case LEFT:  turnLeft();      break;
-			case RIGHT: turnRight();     break;
-			case UP:    shoot();         break;
-			case 68:    best_sc=0;       break;
-			default: e.preventDefault(); break;
+			case SPACE: if(!started)startGame(); break;
+			case LEFT:  turnLeft();              break;
+			case RIGHT: turnRight();             break;
+			case UP:    shoot();                 break;
+			case 68:    best_sc=0;               break;
+			default: e.preventDefault();         break;
 		}
 		if(started)
 			setScene();
