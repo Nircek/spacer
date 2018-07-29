@@ -71,14 +71,14 @@ function onLoad(){
 }
 function animation(){
 	setTimeout(function(){title.innerHTML = 'SPACER v0.0';},1000);
-	setTimeout(function(){scene.innerHTML = 'Loading...';},4000);
-	setTimeout(function(){scene.innerHTML = 'Loading..';},5000);
-	setTimeout(function(){scene.innerHTML = 'Loading.';},6000);
-	setTimeout(function(){scene.innerHTML = 'Loading';},7000);
-	setTimeout(function(){scene.innerHTML = 'Loading...';},8000);
-	setTimeout(function(){scene.innerHTML = 'Loading..';},9000);
-	setTimeout(function(){scene.innerHTML = 'Loading.';},10000);
-	setTimeout(function(){scene.innerHTML = 'Loading';},11000);
+	setTimeout(function(){scene.innerHTML = 'Loading...'; },4000);
+	setTimeout(function(){scene.innerHTML = 'Loading..';  },5000);
+	setTimeout(function(){scene.innerHTML = 'Loading.';   },6000);
+	setTimeout(function(){scene.innerHTML = 'Loading';    },7000);
+	setTimeout(function(){scene.innerHTML = 'Loading...'; },8000);
+	setTimeout(function(){scene.innerHTML = 'Loading..';  },9000);
+	setTimeout(function(){scene.innerHTML = 'Loading.';   },10000);
+	setTimeout(function(){scene.innerHTML = 'Loading';    },11000);
 	setTimeout(function(){mainMenu();},12000);
 }
 function notification(){if(started)return;scene.innerHTML = "To start a game, press [SPACE].";setTimeout(notificatioN,1000);}
@@ -91,18 +91,18 @@ function mainMenu(){
 	body.onkeydown=function(e){
 		if(!e.metaKey){e.preventDefault();}
 		switch(e.keyCode){
-			case SPACE:startGame();break;
-			case LEFT:turnLeft();break;
-			case RIGHT:turnRight();break;
-			case 68: best_sc=0;
-			default:e.preventDefault();break;
+			case SPACE: startGame();     break;
+			case LEFT:  turnLeft();      break;
+			case RIGHT: turnRight();     break;
+			case 68:    best_sc=0;       break;
+			default: e.preventDefault(); break;
 		}
 		if(started)
 			setScene();
 	}
 }
-function turnLeft(){pos=(WIDTH+pos-1)%WIDTH;}
-function turnRight(){pos=(WIDTH+pos+1)%WIDTH;}
+function turnLeft(){  pos=(WIDTH+pos-1)%WIDTH; }
+function turnRight(){ pos=(WIDTH+pos+1)%WIDTH; }
 function startGame(){
 	started=true;
 	clearIntervals();
