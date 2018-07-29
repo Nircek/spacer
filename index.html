@@ -50,21 +50,8 @@ function clearIntervals() {
 	for(i=0;i<ivls.length;++i)
 		clearInterval(ivls[i]);
 }
-/*
-onLoad
-animation
-mainMenu
-startGame
-gameLoop
-setScene
-stopGame
-shift
-randomPoint
-*/
 best_sc = getCookie('best');
 points = 0;
-iterator = 0;
-double = false;
 SPACE=32;
 LEFT=37;
 RIGHT=39;
@@ -128,7 +115,8 @@ function startGame(){
 	interval(randomPoint,3000);
 }
 function setScene() {
-	p.innerHTML = points;
+	if(started)
+		p.innerHTML = points;
 	arr = Array(HEIGHT);
 	for(i=0;i<arr.length;++i)
 		arr[i]=Array(WIDTH).fill(' ').concat('\r\n');
@@ -163,7 +151,7 @@ function gameOver(){
 	if(points>best_sc)best_sc=points;
 	document.cookie = "best="+best_sc;
 	points=0;
-	interval(mainMenu, 1000);
+	mainMenu();
 }
 </script>
 </head>
