@@ -147,6 +147,7 @@ function shift() {
 			if(elements[i].x==pos) points += 1;
 			else gameOver();
 			elements.splice(i,1);
+			--i; // because next element is now in place of deleted element
 		}
 	}
 }
