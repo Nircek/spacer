@@ -113,8 +113,8 @@ function mainMenu(){
 			setScene();
 	}
 }
-function turnLeft(){  pos=(WIDTH+pos-1)%WIDTH; }
-function turnRight(){ pos=(WIDTH+pos+1)%WIDTH; }
+function turnLeft(){  pos=(WIDTH+pos-1)%WIDTH;if(started)setScene(); }
+function turnRight(){ pos=(WIDTH+pos+1)%WIDTH;if(started)setScene(); }
 function shoot(){}
 function startGame(){
 	b.style = '';
