@@ -1,0 +1,25 @@
+.center {
+	text-align: center;
+	font-weight: 800;
+	font-family: monospace;
+	font-size: 30px;
+}
+body {
+	background-color: #aaa;
+}
+pre {
+	margin: 0px;
+}
+span {
+	font-size: 16px;
+}
+h6 {
+	margin: 0px;
+}
+button {
+	color: black;
+	background-color: white;
+	border: none;
+	padding: 8px 16px;
+	font-size: 30px;
+}
